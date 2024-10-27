@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es" class="overflow-x-hidden scroll-smooth">
+
+<head>
+    <title>Trevelin - Cabaña en el lago</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link href="./hamburgers.css" rel="stylesheet">
+    <link rel="icon" href="assets/logo2.png">
+</head>
+
+<body class="overflow-x-hidden w-full h-full font-main bg-main text-black">
+    <button class="fixed bottom-[20px] right-[15px] rounded-full p-2 bg-emerald-600 z-20">
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24">
+            <path fill="#ffffff"
+                d="M16.6 14c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1s-.6.8-.8 1c-.1.2-.3.2-.5.1c-.7-.3-1.4-.7-2-1.2c-.5-.5-1-1.1-1.4-1.7c-.1-.2 0-.4.1-.5s.2-.3.4-.4c.1-.1.2-.3.2-.4c.1-.1.1-.3 0-.4S9.7 8.5 9.5 8c-.1-.7-.3-.7-.5-.7h-.5c-.2 0-.5.2-.6.3Q7 8.5 7 9.7c.1.9.4 1.8 1 2.6c1.1 1.6 2.5 2.9 4.2 3.7c.5.2.9.4 1.4.5c.5.2 1 .2 1.6.1c.7-.1 1.3-.6 1.7-1.2c.2-.4.2-.8.1-1.2zm2.5-9.1C15.2 1 8.9 1 5 4.9c-3.2 3.2-3.8 8.1-1.6 12L2 22l5.3-1.4c1.5.8 3.1 1.2 4.7 1.2c5.5 0 9.9-4.4 9.9-9.9c.1-2.6-1-5.1-2.8-7m-2.7 14c-1.3.8-2.8 1.3-4.4 1.3c-1.5 0-2.9-.4-4.2-1.1l-.3-.2l-3.1.8l.8-3l-.2-.3c-2.4-4-1.2-9 2.7-11.5S16.6 3.7 19 7.5c2.4 3.9 1.3 9-2.6 11.4" />
+        </svg>
+    </button>
+
+    <header id="header"
+        class="text-white w-full bg-transparent bg-cover flex flex-col items-center mx-auto py-1 lg:py-4 lg:shadow-none absolute top-0 transition-transform duration-500 ease-in-out z-[9999]">
+        <!-- Navbar Desktop -->
+        <nav class="w-full flex items-center justify-center max-lg:hidden max-w-7xl mx-auto px-4 1280px:px-0">
+            <div class="w-full flex justify-between">
+                <div class="flex items-center">
+                    <img src="assets/logo2.png" height="0" width="110" />
+                </div>
+                <ul class="flex text-white text-lg font-light items-center gap-x-20">
+                    <li class="li-header"><a href="index.html" rel="noopenner"
+                            class="hover:text-zinc-300 transition-all">Inicio</a></li>
+                    <li class="li-header"><a href="index.html#cabanas"
+                            class="cursor-pointer hover:text-zinc-300 transition-all" rel="noopenner">Cabañas</a>
+                    </li>
+                    <li class="li-header"><a href="preguntas-frecuentes.html" class="hover:text-zinc-300 transition-all"
+                            rel="noopenner">Preguntas frecuentes</a></li>
+                    <li class="li-header"><a href="reservas.html" class="hover:text-zinc-300 transition-all"
+                            rel="noopenner">Reservas</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Navbar Mobile -->
+        <nav class="w-full h-[80px] flex justify-around lg:hidden">
+            <div class="self-center">
+                <img src="assets/logo2.png" height="" width="80">
+            </div>
+            <div class="self-center">
+                <div class="flex items-center menu-hamb" onClick="bars()">
+                    <button class="hamburger hamburger--squeeze" type="button" id="boton">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="menu"
+            class="menu w-[90%] bg-main text-black h-full fixed top-0 left-0 z-20 -translate-x-full transition-all ease-in-out duration-300">
+            <ul class="flex flex-col h-[50%] text-black text-xl gap-5 px-5 pt-5 w-full font-semibold">
+                <div class="flex w-full justify-between items-center">
+                    <div class="flex">
+                        <img src="assets/logo.png" height="0" width="100" />
+                    </div>
+                    <p id="equis" onClick="onEquis()" class="text-5xl cursor-pointer">&Cross;</p>
+                </div>
+                <li><a href="index.html#inicio" onClick="onEquis()" class="italic">INICIO</a></li>
+                <li><a href="index.html#cabanas" onClick="onEquis()" class="italic">CABAÑAS</a></li>
+                <li><a href="preguntas-frecuentes.html" onClick="onEquis()" class="italic">PREGUNTAS FRECUENTES</a></li>
+                <li><a href="reservas.html" onClick="onEquis()" class="italic">RESERVAS</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="w-full h-full flex flex-col items-center justify-center">
+
+        <section class="h-[61dvh] bg-hero-lago flex justify-center items-center w-full">
+
+            <article
+                class="flex flex-col mt-5 justify-center h-full items-center mx-auto max-w-7xl w-full px-2 md:px-4 1280px:px-0 gap-y-2">
+                <h1
+                    class="text-white font-secondary font-bold leading-[1] text-[40px] sm:text-5xl md:text-6xl xl:text-7xl text-center md:max-w-[750px] mt-8">
+                    Cabaña en el lago
+                </h1>
+                <p class="text-white text-center text-xl lg:text-2xl w-full max-w-[500px]">Relajate junto al lago y
+                    disfrutá de vistas espectaculares desde tu cabaña.</p>
+            </article>
+
+        </section>
+
+        <section class="w-full flex justify-center items-center my-24 lg:my-28">
+            <article
+                class="mx-auto max-w-7xl w-full h-full flex items-center justify-center flex-col gap-y-4 px-3 md:px-4 1280px:px-0">
+
+                <div class="flex flex-col items-center justify-center">
+                    <h2 class="font-secondary font-bold text-4xl text-center lg:text-6xl flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 14 14" class="mr-2">
+                            <g fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M9.901 4.317v1.364M9.9 2.662a.124.124 0 0 1-.124-.125c0-.07.056-.125.124-.125m.002.25a.125.125 0 0 0 .124-.125a.124.124 0 0 0-.124-.125M.857 12.864h12.007M1.989 6.829a1.939 1.939 0 1 0 3.878 0a1.939 1.939 0 1 0-3.878 0" />
+                                <path
+                                    d="M.855 12.865v-1.024a3.072 3.072 0 1 1 6.145 0v1.024m.394-6.149A3.554 3.554 0 1 0 6.33 4" />
+                            </g>
+                        </svg>
+                        Información
+                    </h2>
+                    <p class="text-center text-lg sm:text-xl lg:text-2xl xl:text-3xl mt-2 mb-8">Toda la información
+                        sobre nuestras cabañas</p>
+                </div>
+                <div class="flex flex-col items-center w-full gap-y-5 md:flex-row md:justify-between md:items-start">
+
+                    <div class="w-full">
+                        <div class="w-full flex gap-5 mb-5 md:text-lg lg:text-xl">
+                            <div class="flex items-center text-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    class="mr-2">
+                                    <path fill="#000"
+                                        d="M19 7h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4M7 13a3 3 0 0 0 3-3a3 3 0 0 0-3-3a3 3 0 0 0-3 3a3 3 0 0 0 3 3" />
+                                </svg>
+                                : 3
+                            </div>
+                            <div class="flex items-center text-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512"
+                                    class="mr-2">
+                                    <path fill="#000"
+                                        d="M64 131.9C64 112.1 80.1 96 99.9 96c9.5 0 18.6 3.8 25.4 10.5l16.2 16.2c-21 38.9-17.4 87.5 10.9 123L151 247c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L345 121c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-1.3 1.3c-35.5-28.3-84.2-31.9-123-10.9l-16.3-16.2C151.8 42.5 126.4 32 99.9 32C44.7 32 0 76.7 0 131.9V448c0 17.7 14.3 32 32 32s32-14.3 32-32zM256 352a32 32 0 1 0 0-64a32 32 0 1 0 0 64m64 64a32 32 0 1 0-64 0a32 32 0 1 0 64 0m0-128a32 32 0 1 0 0-64a32 32 0 1 0 0 64m64 64a32 32 0 1 0-64 0a32 32 0 1 0 64 0m0-128a32 32 0 1 0 0-64a32 32 0 1 0 0 64m64 64a32 32 0 1 0-64 0a32 32 0 1 0 64 0m32-32a32 32 0 1 0 0-64a32 32 0 1 0 0 64" />
+                                </svg>
+                                : 2
+                            </div>
+                            <div class="flex items-center justify-center ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    class="mr-2">
+                                    <path fill="#000"
+                                        d="M12 21q-1.05 0-1.775-.725T9.5 18.5t.725-1.775T12 16t1.775.725t.725 1.775t-.725 1.775T12 21m-5.65-5.65l-2.1-2.15q1.475-1.475 3.463-2.337T12 10t4.288.875t3.462 2.375l-2.1 2.1q-1.1-1.1-2.55-1.725T12 13t-3.1.625t-2.55 1.725M2.1 11.1L0 9q2.3-2.35 5.375-3.675T12 4t6.625 1.325T24 9l-2.1 2.1q-1.925-1.925-4.462-3.012T12 7T6.563 8.088T2.1 11.1" />
+                                </svg>
+                                Wi-Fi Gratis
+                            </div>
+                        </div>
+
+                        <div class="w-full flex flex-col justify-center gap-5 md:max-w-[550px]">
+                            <p class="text-lg">
+                                Nuestras cabañas están completamente equipadas para brindarte una experiencia
+                                inolvidable. Los dormitorios cuentan con <span class="font-bold">camas
+                                    matrimoniales</span> y sábanas suaves, además de una <span class="font-bold">TV
+                                    satelital</span> en el living. La cocina tiene todo lo que necesitas, desde <span
+                                    class="font-bold">microondas</span> y <span class="font-bold">cafetera</span> hasta
+                                vajilla completa, ideal para preparar tus comidas. El baño incluye <span
+                                    class="font-bold">ducha con hidromasaje</span> y toallas de alta calidad.
+                                <br><br>
+                                Para mayor confort, ofrecemos <span class="font-bold">aire acondicionado</span> y <span
+                                    class="font-bold">calefacción</span> en todos los ambientes. En el exterior,
+                                disfrutarás de un amplio <span class="font-bold">deck con parrilla</span> y muebles de
+                                jardín, perfecto para disfrutar de una comida al aire libre con vistas a la naturaleza.
+                                <br><br>
+                                Además, todas las cabañas incluyen <span class="font-bold">Wi-Fi gratuito</span>, <span
+                                    class="font-bold">servicio de limpieza diario</span>, <span
+                                    class="font-bold">estacionamiento privado</span> y un área de <span
+                                    class="font-bold">juegos para niños</span>, garantizando que todos, grandes y
+                                chicos, tengan lo que necesitan para relajarse y disfrutar al máximo.
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="w-full flex flex-col gap-4 md:max-w-[500px] text-black">
+                        <div class="bg-cabana-c px-6 py-9 flex flex-col justify-between rounded-xl">
+                            <p class="font-secondary font-bold text-2xl">Precio <span class="underline">aprox.</span> por noche:</p>
+                            <p class="font-secondary font-bold text-3xl text-gray-600">$ 300mil</p>
+                        </div>
+                        <div class="bg-cabana-c px-6 py-9 flex flex-col justify-between rounded-xl gap-2">
+                            <p class="font-secondary font-bold text-2xl">Más información:</p>
+                            <span class="flex items-center font-secondary text-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16">
+                                    <g fill="#000">
+                                        <path
+                                            d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                                        <path d="M8 14a1 1 0 1 0 0-2a1 1 0 0 0 0 2" />
+                                    </g>
+                                </svg>
+                                +54 9 3442 87-4329
+                            </span>
+                            <span class="flex items-center font-secondary text-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256"
+                                    class="mr-1">
+                                    <path fill="#000"
+                                        d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8" />
+                                </svg>
+                                9am - 12am
+                            </span>
+                        </div>
+                        <div class="bg-cabana-c px-6 py-9 flex flex-col justify-between rounded-xl">
+                            <p class="font-secondary font-bold text-2xl">Compartí esta cabaña:</p>
+                            <div class="flex gap-x-3 mt-2">
+                                <span
+                                    class="p-2 rounded-full bg-blue-500 cursor-pointer hover:bg-blue-600 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                        <path fill="#ffffff"
+                                            d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="p-2 rounded-full bg-blue-500 cursor-pointer hover:bg-blue-600 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                        <path fill="#ffffff"
+                                            d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="p-2 rounded-full bg-blue-500 cursor-pointer hover:bg-blue-600 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="27" viewBox="0 0 24 24">
+                                        <path fill="#ffffff"
+                                            d="m.058 1l9.267 12.39L0 23.462h2.099l8.163-8.82l6.596 8.82H24l-9.788-13.087L22.892 1h-2.1l-7.517 8.122L7.2 1zm3.087 1.546h3.28l14.488 19.37h-3.28L3.145 2.547Z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="p-2 rounded-full bg-blue-500 cursor-pointer hover:bg-blue-600 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                        <path fill="#ffffff"
+                                            d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="w-full py-6 rounded-xl flex flex-col items-center bg-cabana-c">
+                    <p class="font-bold font-secondary text-3xl md:text-4xl xl:text-5xl text-center max-w-[1000px]">¡IMPORTANTE!</p>
+                    <p class="text-lg md:text-xl text-center xl:text-3xl max-w-[1000px]">
+                        Los <span class="font-bold">precios pueden variar</span> segun la temporada, por favor
+                        <span class="font-bold">consultar los precios</span> antes de realizar el pago de la
+                        reserva.
+                    </p>
+                </div>
+
+                <div class="mt-12">
+                    <div class="flex flex-col items-center justify-center">
+                        <h2 class="font-secondary font-bold text-4xl text-center lg:text-6xl flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 48 48" class="hidden sm:block">
+                                <g fill="none" stroke="#000000" stroke-linejoin="round" stroke-width="4">
+                                    <path stroke-linecap="round"
+                                        d="M5 10a2 2 0 0 1 2-2h34a2 2 0 0 1 2 2v28a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"
+                                        clip-rule="evenodd" />
+                                    <path stroke-linecap="round" d="M14.5 18a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3"
+                                        clip-rule="evenodd" />
+                                    <path d="m15 24l5 4l6-7l17 13v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-4z" />
+                                </g>
+                            </svg>
+                            Fotos de la cabaña
+                        </h2>
+                        <p class="text-center text-lg sm:text-xl lg:text-2xl xl:text-3xl mt-2 mb-8">Imágenes de nuestras
+                            cabañas</p>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 grid-rows-1 sm:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 gap-y-6 gap-x-8 z-10 justify-between place-content-between">
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/3.jpg"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/2.jpg"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/1.jpg"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/5.jpg"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/4.jpg"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/6.webp"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/2.jpg"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/1.jpg"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                        <a class="z-10 cursor-pointer">
+                            <img class="rounded-sm w-96 h-56 object-cover z-[10001]" src="assets/3.jpg"
+                                alt="fotos de la casa" onclick="openModal(this.src)">
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+        </section>
+
+        <div id="photoModal" class="fixed inset-0 bg-black bg-opacity-75 items-center justify-center hidden z-[11000]">
+            <div class="relative">
+                <span class="absolute top-2 right-2 text-white text-2xl cursor-pointer"
+                    onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="Imagen ampliada" class="rounded-lg max-w-full max-h-screen">
+            </div>
+        </div>
+    </main>
+
+    <footer
+        class="w-full bg-cover bg-top bg-no-repeat flex flex-col items-center justify-center bg-[url(assets/footerimg.png)] h-auto py-8">
+        <div
+            class="px-4 xl:px-0 mx-auto max-w-7xl w-full flex flex-col items-center justify-between mt-4 text-black sm:flex-row">
+            <div class="flex flex-col">
+                <h2 class="text-4xl font-secondary flex items-center">
+                    Seguinos
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+                        <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4">
+                            <path stroke-linejoin="round" d="M15 26V15a3 3 0 1 1 6 0v11" />
+                            <path stroke-linejoin="round"
+                                d="M39 25v6.5C39 37.851 33.851 43 27.5 43h-1C20.149 43 15 37.851 15 31.5V25" />
+                            <path stroke-linejoin="round"
+                                d="M21 29v-5a3 3 0 1 1 6 0v5m0 0v-5a3 3 0 1 1 6 0v5m0 0v-5a3 3 0 1 1 6 0v5" />
+                            <path
+                                d="M28 15a9.97 9.97 0 0 0-1.959-5.945A9.99 9.99 0 0 0 18 5a9.99 9.99 0 0 0-8.042 4.055A9.97 9.97 0 0 0 8 15" />
+                        </g>
+                    </svg>
+                </h2>
+                <ul class="flex flex-col">
+                    <li>
+                        <a href="" class="flex items-center gap-x-1 text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                <path fill="#000"
+                                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                            </svg>
+                            @trevelincabanas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="flex items-center gap-x-1 text-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                <path fill="#000"
+                                    d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02" />
+                            </svg>
+                            Trevelin Cabañas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="my-7">
+                <a href="inscripciones.html" class="cursor-pointer">
+                    <button
+                        class="bg-white text-black py-3 px-6 rounded-2xl font-medium text-xl items-center flex hover:scale-[105%] transition-all bouncing-element">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 16 16" class="mr-2">
+                            <path fill="#000"
+                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144l-2.494.654l.666-2.433l-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931a6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646c-.182-.065-.315-.099-.445.099c-.133.197-.513.646-.627.775c-.114.133-.232.148-.43.05c-.197-.1-.836-.308-1.592-.985c-.59-.525-.985-1.175-1.103-1.372c-.114-.198-.011-.304.088-.403c.087-.088.197-.232.296-.346c.1-.114.133-.198.198-.33c.065-.134.034-.248-.015-.347c-.05-.099-.445-1.076-.612-1.47c-.16-.389-.323-.335-.445-.34c-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992c.47.205.84.326 1.129.418c.475.152.904.129 1.246.08c.38-.058 1.171-.48 1.338-.943c.164-.464.164-.86.114-.943c-.049-.084-.182-.133-.38-.232" />
+                        </svg>
+                        HACÉ TU RESERVA
+                    </button>
+                </a>
+            </div>
+            <div class="self-center flex items-center gap-x-3">
+                <img src="assets/logo.png" height="" width="80" />
+                <p class="text-2xl font-secondary">Cabañas<br> Trevelin</p>
+            </div>
+        </div>
+        <div
+            class="border-t-2 border-black w-[95%] text-black mt-6 pt-2 xl:px-0 mx-auto max-w-7xl flex justify-between">
+            <p class="flex items-center">Desarrollado por
+                <a href="https://faustidev.netlify.app" target="_blank" rel="noopenner"
+                    class="cursor-pointer flex items-center ml-1">
+                    @FaustinoKlug
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12h3m6-9v3M7.8 7.8L5.6 5.6m10.6 2.2l2.2-2.2M7.8 16.2l-2.2 2.2M12 12l9 3l-4 2l-2 4z" />
+                    </svg>
+                </a>
+            </p>
+            <a href="https://www.instagram.com/faustidev/" target="_blank" rel="noopenner">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                    <path fill="#000"
+                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('header');
+            const inicioSection = document.getElementById('inicio');
+            const sectionHeight = inicioSection.offsetHeight;
+
+            if (window.scrollY > sectionHeight * 0.9) {
+                header.classList.add('sticky-header');
+            } else {
+                header.classList.remove('sticky-header');
+            }
+        });
+
+        let banderaButton = true
+        const menu = document.querySelector(".menu");
+        const equis = document.getElementById("equis");
+        let bars = () => {
+            menu.style.transform = "translateX(0%)"
+            document.body.classList.toggle('overflow-hidden');
+            window.scrollTo(0, 0);
+        }
+
+        let onEquis = () => {
+            menu.style.transform = "translateX(-100%)"
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('photoModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('photoModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+
+</html>
