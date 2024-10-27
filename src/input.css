@@ -14,8 +14,15 @@
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.testimonio-bg {
-    background-color: #f7f3f3;
+.bg-testimonios {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(assets/testimoniosbg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-servicios {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/footerimg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -56,8 +63,9 @@
 
 .bg-act {
     background-color: transparent;
-    background-image: linear-gradient(170deg, #071406 15%, #3add70e3 100%);
+    background-image: linear-gradient(170deg, #212121 20%, #059669 100%);
 }
+
 
 .bg-hero-jungla {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)), url(assets/caban1.jpg);
@@ -72,6 +80,14 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.bg-footer {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)), url(assets/footerimg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 
 .bg-hero-madera {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)), url(assets/caban3.jpg);
