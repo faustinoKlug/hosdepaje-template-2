@@ -4,9 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "secondary": "Poppins",
-        "main": "Raleway",
-        "terciary": "Old Standard TT"
+        "secondary": "Crimson Text",
+        "main": "Nunito Sans",
       },
       colors: {
         "main": "#f6f7f9",
